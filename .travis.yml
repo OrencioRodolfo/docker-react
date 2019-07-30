@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build  -t orodolfo/docker-react -f Dockerfile.dev .
+  - docker build -t orodolfo/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true orodolfo/docker-react npm run test
+  - docker run -e CI=true orodolfo/docker-react npm run test -- --coverage
